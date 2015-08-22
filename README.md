@@ -10,8 +10,10 @@ be done by splitting records in OpSims and assigning healpix Ids to them.
 - create a new primary key for our database: obsHistId * numHealpix + healpixId
 - For each record, which is a visit in a field, loop over healpixels in that field and for each healpixel, write out a new record instead of the original record with the new primary key
     - The main thing we would need is a relation between the ra/dec coverage
-    of a field to the healpixels in that field
+    of a field to the healpixels in that field: 
     - We could get a lot of this by `cheating' and using glob to read the
     output of the  works referenced above. We could also use the basic functions
     they used to do this (so that it will work for different field
-    tilings/ nside in future.
+    tilings/ nside in future: Discussed with Eric Gawaiser, and he decided that we should redo it using
+    query_disc which also exists is healpy which is already in the stack.
+    - Discussed using MAF, and may use the MAF library.
